@@ -7,6 +7,10 @@ const path = require('path');
 module.exports = {
 	// 多页配置
 	isMultiplePage: true,
+
+	pageUrl:{
+		'/admin':path.resolve(__dirname, '../src/mis/admin/index.html')
+	},
 	// 是否启用异步加载功能
 	isOpenSyncImport: true,
 	// 最小chunk的大小
