@@ -148,6 +148,8 @@ npm run build:vendors
     isMultiplePage: true,
     // 是否启用异步加载功能
     isOpenSyncImport: true,
+    //开启CDN资源引用
+    cdnUrl: 'http://www.mis.58.com',
     // 最小chunk的大小
     minChunkSize: 10000,
     // dev模式下是否自动打开页面
@@ -186,22 +188,22 @@ npm run build:vendors
     ],
     // 本地开发端口
     port: 5858,
-    // 本地开发代理
+    // 本地开发代理，结合mock，默认转发为本地1111
     proxy: {
-        // '/api': {
-        //  target: "http://*.com",
-        //  changeOrigin: true,
-        //  pathRewrite: {
-        //      '^/api': ''
-        //  },
-        //  logLevel: 'error'
-        // }
+        '/api': {
+            target: 'http://localhost:1111',
+            changeOrigin: true,
+            pathRewrite: {
+                // '^/api': ''
+            }
+        }
     }
 }
 ```
 
 * `isMultiplePage` <Boolean> 是否多入口打包
 * `isOpenSyncImport` <Boolean> 是否启用异步加载功能（启用的状态下，`commons` 参数将失效）
+* `cdnUrl` <String> 开启CDN资源引用(参数为CDN路径前缀)
 * `minChunkSize` <Number> 最小chunk的大小 (`isOpenSyncImport` 参数为 `true` 是生效)
 * `autoOpenBrowser` <Boolean> dev模式下是否自动打开页面
 * `assetsRoot` <String> 资源文件目录 URL（参照webpack官方文档）

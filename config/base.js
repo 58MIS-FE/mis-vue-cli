@@ -14,6 +14,8 @@ module.exports = {
     },
     // 是否启用异步加载功能
     isOpenSyncImport: true,
+    //开启CDN资源引用
+    cdnUrl: 'http://www.mis.58.com',
     // 最小chunk的大小
     minChunkSize: 10000,
     // dev模式下是否自动打开页面

@@ -7,6 +7,7 @@
         "start": "npm run mock && npm run dev",
         "build": "node build/build.js",
         "build:d": "node build/build-d.js",
+        "build:c": "node build/build-c.js",
         "build:vendors": "webpack --config build/webpack.dll.config.js",
         "mock": "node mock/server.js &"
     },

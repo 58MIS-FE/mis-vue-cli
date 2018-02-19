@@ -52,6 +52,10 @@ module.exports = {
         env: require('./prod-d.env'),
         sourceMap: '#source-map'
     }, baseConfig),
+    'build:c': Object.assign({
+        env: require('./prod-c.env'),
+        sourceMap: '#source-map'
+    }, baseConfig),
     dev: Object.assign({
         env: require('./dev.env')
     }, baseConfig)

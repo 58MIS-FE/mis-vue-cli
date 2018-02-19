@@ -30,15 +30,12 @@ const commonsChunk = config.isOpenSyncImport ? {} : Object.assign({
 
 function getCommonsChunkPluginSetting() {
     return config.isOpenSyncImport ?
-        config.minChunkSize ?
-        [
+        config.minChunkSize ? [
             // 设置chunk的最小大小
             new webpack.optimize.MinChunkSizePlugin({
                 minChunkSize: config.minChunkSize || 10000
             })
-        ] :
-        [] :
-        [
+        ] : [] : [
             // 公用模块抽离
             new webpack.optimize.CommonsChunkPlugin({
                 names: ['manifest'].concat(Object.keys(commonsChunk)),
@@ -49,6 +46,17 @@ function getCommonsChunkPluginSetting() {
         ]
 }
 
+/**
+ * 获取CDN资源前缀
+ */
+function getCdnUrl() {
+    return process.env.NODE_ENV == 'production-c' ? config.cdnUrl : config.publicPath;
+}
+
+function pathCDNJoin(...args) {
+    return process.env.NODE_ENV == 'production-c' ? args.join('/') : path.posix.join(...args);
+}
+
 module.exports = {
     entry: Object.assign({}, config.entry, commonsChunk),
 
@@ -56,7 +64,7 @@ module.exports = {
         path: config.buildRoot,
         filename: pathJoin('js', '[name].[hash].js'),
         chunkFilename: pathJoin('js', '[name].[hash].js'),
-        publicPath: config.publicPath
+        publicPath: getCdnUrl()
     },
 
     resolve: {
@@ -141,7 +149,7 @@ module.exports = {
         // 插入自定义文件插入到html中
         new AddAssetHtmlPlugin([{
             filepath: pathJoin(config.assetsRoot, config.staticAssets, 'libs/js/vendors.js'),
-            publicPath: pathJoin(config.publicPath, config.staticAssets, 'libs/js'),
+            publicPath: pathCDNJoin(getCdnUrl(), config.staticAssets, 'libs/js'),
             outputPath: pathJoin(config.staticAssets, 'libs/js'),
             files: config.libraryEntry.map(entry => entry + '.html'),
             includeSourcemap: false
