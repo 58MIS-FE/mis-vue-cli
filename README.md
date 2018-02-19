@@ -38,6 +38,12 @@ npm run build
 npm run build:d
 ```
 
+### build:c(CDN资源定位打包)
+
+``` shell
+npm run build:c
+```
+
 ### dll(打包外部资源库)
 
 ```  
