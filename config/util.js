@@ -3,32 +3,32 @@
  */
 
 function mapObject(obj, fun) {
-	let result = {};
+    let result = {};
 
-	Object
-		.keys(obj)
-		.forEach(key => {
-			let rt = fun(obj[key], key);
+    Object
+        .keys(obj)
+        .forEach(key => {
+            let rt = fun(obj[key], key);
 
-			if (rt) result[key] = rt;
-		});
+            if (rt) result[key] = rt;
+        });
 
-	return result;
+    return result;
 }
 
 function arrToObj(arr, fun) {
-	let result = {};
+    let result = {};
 
-	arr.forEach((val, idx) => {
-		let rt = fun(val, idx);
+    arr.forEach((val, idx) => {
+        let rt = fun(val, idx);
 
-		if (rt) result[val] = rt;
-	});
+        if (rt) result[val] = rt;
+    });
 
-	return result;
+    return result;
 }
 
 module.exports = {
-	mapObject,
-	arrToObj
+    mapObject,
+    arrToObj
 }

@@ -19,6 +19,13 @@
 npm run dev
 ```
 
+### start && mock
+
+``` shell
+npm run start
+```
+
+
 ### build
 
 ``` shell
@@ -61,6 +68,12 @@ npm run build:vendors
 │   ├── prod-d.env.js
 │   ├── prod.env.js
 │   └── util.js
+├── mock
+│   ├── home  (页面1，对应的mock数据)
+│   |   ├── data
+|   |   |   |── getItem.js
+|   |   |── index.js   
+│   └── server.js
 ├── package-lock.json
 ├── package.json
 └── src
@@ -113,7 +126,7 @@ npm run build:vendors
 │   ├── index.3f05035ea26e8a6c3eb8.js.map
 │   ├── page2.3f05035ea26e8a6c3eb8.js
 │   └── page2.3f05035ea26e8a6c3eb8.js.map
-├── static ()
+├── static
 │   ├── libs
 │   │   └── js
 │   │       ├── manifest_vendors.json

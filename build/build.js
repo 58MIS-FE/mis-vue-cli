@@ -3,9 +3,9 @@
  */
 
 const
-	path = require('path'),
-	ora = require('ora'),
-	rm = require('rimraf');
+    path = require('path'),
+    ora = require('ora'),
+    rm = require('rimraf');
 
 const config = require('../config');
 
@@ -20,11 +20,11 @@ let spinner = ora('buildding for production...\n');
 spinner.start();
 
 rm(config.build.buildRoot, err => {
-	if (err) throw err;
+    if (err) throw err;
 
-	spinner.text = 'webpack build...';
+    spinner.text = 'webpack build...';
 
-	webpackCompile(webpackConfig, () => {
-		spinner.stop();
-	})
+    webpackCompile(webpackConfig, () => {
+        spinner.stop();
+    })
 });

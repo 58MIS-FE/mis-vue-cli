@@ -1,9 +1,9 @@
 const
     path = require('path')
-    webpack = require('webpack')
-    Glob = require('glob').Glob;
+webpack = require('webpack')
+Glob = require('glob').Glob;
 
-const 
+const
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
@@ -17,9 +17,9 @@ function getPath(...args) {
 
 function getCommonsChunk() {
     return new Glob('!(_)*/!(_)*.js', {
-        cwd: getPath('pages', 'common'),
-        sync: true
-    })
+            cwd: getPath('pages', 'common'),
+            sync: true
+        })
         .found
         .map(file => getPath('pages', 'common', file));
 }
@@ -29,16 +29,16 @@ const commonsChunk = config.isOpenSyncImport ? {} : Object.assign({
 }, config.commons);
 
 function getCommonsChunkPluginSetting() {
-    return config.isOpenSyncImport 
-        ? config.minChunkSize 
-            ? [ 
-                // 设置chunk的最小大小
-                new webpack.optimize.MinChunkSizePlugin({
-                    minChunkSize: config.minChunkSize || 10000
-                }) 
-            ]
-            : []
-        : [
+    return config.isOpenSyncImport ?
+        config.minChunkSize ?
+        [
+            // 设置chunk的最小大小
+            new webpack.optimize.MinChunkSizePlugin({
+                minChunkSize: config.minChunkSize || 10000
+            })
+        ] :
+        [] :
+        [
             // 公用模块抽离
             new webpack.optimize.CommonsChunkPlugin({
                 names: ['manifest'].concat(Object.keys(commonsChunk)),
@@ -67,8 +67,7 @@ module.exports = {
     externals: config.externals,
 
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.vue$/,
                 exclude: /node_modules/,
                 use: {
@@ -95,12 +94,12 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        use: [
-                            'css-loader',
-                            'postcss-loader'
-                        ]
-                    })
+                    fallback: 'style-loader',
+                    use: [
+                        'css-loader',
+                        'postcss-loader'
+                    ]
+                })
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
@@ -140,14 +139,12 @@ module.exports = {
         }),
 
         // 插入自定义文件插入到html中
-        new AddAssetHtmlPlugin([
-            {
-                filepath: pathJoin(config.assetsRoot, config.staticAssets, 'libs/js/vendors.js'),
-                publicPath: pathJoin(config.publicPath, config.staticAssets, 'libs/js'),
-                outputPath: pathJoin(config.staticAssets, 'libs/js'),
-                files: config.libraryEntry.map(entry => entry + '.html'),
-                includeSourcemap: false
-            }
-        ])
+        new AddAssetHtmlPlugin([{
+            filepath: pathJoin(config.assetsRoot, config.staticAssets, 'libs/js/vendors.js'),
+            publicPath: pathJoin(config.publicPath, config.staticAssets, 'libs/js'),
+            outputPath: pathJoin(config.staticAssets, 'libs/js'),
+            files: config.libraryEntry.map(entry => entry + '.html'),
+            includeSourcemap: false
+        }])
     ].concat(getCommonsChunkPluginSetting())
 }
