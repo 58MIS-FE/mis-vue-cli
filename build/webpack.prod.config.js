@@ -60,7 +60,7 @@ module.exports = webpackMerge(baseWebpackConfig, {
 
         // 拷贝静态资源
         new CopyWebpackPlugin([{
-            from: path.join(config.assetsRoot, config.staticAssets),
+            from: path.join(config.assetsStatic),
             to: path.join(config.buildRoot, config.staticAssets)
         }]),
 

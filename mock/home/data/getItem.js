@@ -8,7 +8,7 @@ module.exports = {
             }],
             runmatters: [{
                     value: 'yb1',
-                    title: '2017年11月。'
+                    title: '2017年11月'
                 },
                 {
                     value: 'yb2',

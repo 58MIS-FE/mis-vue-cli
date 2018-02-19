@@ -1,7 +1,7 @@
 const
-    path = require('path')
-webpack = require('webpack')
-Glob = require('glob').Glob;
+    path = require('path'),
+    webpack = require('webpack'),
+    Glob = require('glob').Glob;
 
 const
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
@@ -143,12 +143,12 @@ module.exports = {
         // 检测外部依赖包是否更新
         new webpack.DllReferencePlugin({
             context: __dirname,
-            manifest: require(`${config.assetsRoot}/${config.staticAssets}/libs/js/manifest_vendors.json`)
+            manifest: require(`${config.assetsStatic}/libs/js/manifest_vendors.json`)
         }),
 
         // 插入自定义文件插入到html中
         new AddAssetHtmlPlugin([{
-            filepath: pathJoin(config.assetsRoot, config.staticAssets, 'libs/js/vendors.js'),
+            filepath: pathJoin(config.assetsStatic, 'libs/js/vendors.js'),
             publicPath: pathCDNJoin(getCdnUrl(), config.staticAssets, 'libs/js'),
             outputPath: pathJoin(config.staticAssets, 'libs/js'),
             files: config.libraryEntry.map(entry => entry + '.html'),

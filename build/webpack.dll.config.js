@@ -4,7 +4,7 @@ const
 
 const config = require('../config/base');
 
-const libsPath = path.resolve(__dirname, '../src/static/libs/js');
+const libsPath = path.resolve(__dirname, '../static/libs/js');
 
 module.exports = {
     entry: {

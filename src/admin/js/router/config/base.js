@@ -3,13 +3,13 @@
  */
 
 // import ErrorComp from 'Spa@comp/pages/error';
-const ErrorComp = () => import(
-    /* webpackChunkName: "error-comp" */
-    'mis@comp/pages/error'
-);
+const ErrorComp = () =>
+    import (
+        /* webpackChunkName: "error-comp" */
+        '../../components/pages/error'
+    );
 
-export default [
-    {
+export default [{
         path: '/',
         redirect: '/home'
     },

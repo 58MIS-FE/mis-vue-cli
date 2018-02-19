@@ -2,7 +2,7 @@
  * @description home模块路由配置
  */
 
-import Home from 'mis@comp/pages/home';
+import Home from '../../components/pages/home';
 
 export default {
     path: '/home',

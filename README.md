@@ -58,6 +58,7 @@ npm run build:vendors
 .
 ├── README.md
 ├── build
+|   ├── build-c.js
 │   ├── build-d.js
 │   ├── build.js
 │   ├── dev-client.js
@@ -71,6 +72,7 @@ npm run build:vendors
 │   ├── base.js
 │   ├── dev.env.js
 │   ├── index.js
+│   ├── prod-c.env.js
 │   ├── prod-d.env.js
 │   ├── prod.env.js
 │   └── util.js
@@ -82,22 +84,22 @@ npm run build:vendors
 │   └── server.js
 ├── package-lock.json
 ├── package.json
-└── src
-    ├── pages
-    │   ├── common
-    │   │   └── js
-    │   │       └── common.js
-    │   ├── index (页面1，单页模式将默认将index文件夹作为页面)
-    │   │   ├── index.html
-    │   │   ├── js
-    │   │   │   ├── index.js
-    │   │   └── style
-    │   └── page2 (页面2)
-    │       ├── index.html
-    │       ├── js
-    │       │   └── index.js
-    │       └── style
-    └── static (静态资源文件夹)
+├── src
+│   |
+│   ├── common
+│   │   └── js
+│   │       └── common.js
+│   ├── index (页面1，单页模式将默认将index文件夹作为页面)
+│   │   ├── index.html
+│   │   ├── js
+│   │   │   ├── index.js
+│   │   └── style
+│   └── page2 (页面2)
+│       ├── index.html
+│       ├── js
+│       │   └── index.js
+│       └── style
+└── static (静态资源文件夹)
         ├── libs
         │   └── js (js文件夹下的)
         │       ├── manifest_vendors.json

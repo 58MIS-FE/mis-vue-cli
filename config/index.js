@@ -20,15 +20,15 @@ function getEntrySetting() {
     };
 
     new Glob('!(_)*/!(_)*.html', {
-            cwd: getPath('mis'),
+            cwd: getPath('./'),
             sync: true
         })
         .found
         .forEach(file => {
             let pageName = file.split('/')[0];
 
-            result.entry[pageName] = getPath('mis', pageName, 'js', 'index.js');
-            result.template.push(getPath('mis', file));
+            result.entry[pageName] = getPath(pageName, 'js', 'index.js');
+            result.template.push(getPath(file));
         });
 
     return result;
@@ -37,8 +37,8 @@ function getEntrySetting() {
 let setting = getEntrySetting();
 
 let baseConfig = Object.assign({}, base, {
-    entry: base.isMultiplePage ? setting.entry : { index: getPath('mis/index/js/index.js') },
-    template: base.isMultiplePage ? setting.template : [getPath('mis/index/index.html')],
+    entry: base.isMultiplePage ? setting.entry : { index: getPath('index/js/index.js') },
+    template: base.isMultiplePage ? setting.template : [getPath('index/index.html')],
     outputPath: base.buildRoot,
     commonAlias: mapObject(base.commonAlias, value => getPath(value))
 });

@@ -9,8 +9,7 @@ module.exports = {
     isMultiplePage: true,
 
     pageUrl: {
-        '/admin': path.resolve(__dirname, '../src/mis/admin/index.html'),
-        '/web_index': path.resolve(__dirname, '../src/mis/web_index/index.html')
+        '/admin': path.resolve(__dirname, '../src/admin/index.html')
     },
     // 是否启用异步加载功能
     isOpenSyncImport: true,
@@ -22,6 +21,8 @@ module.exports = {
     autoOpenBrowser: true,
     // 文件目录
     assetsRoot: path.resolve(__dirname, '../src'),
+    // 静态资源目录
+    assetsStatic: path.resolve(__dirname, '../static'),
     // 生成目录
     buildRoot: path.resolve(__dirname, '../dist'),
     // 静态资源根目录
@@ -31,9 +32,9 @@ module.exports = {
     // 公用别名
     commonAlias: {
         Static: 'static',
-        '@': 'mis',
-        'mis@': 'mis/index',
-        'mis@comp': 'mis/index/js/components'
+        '@': './',
+        'mis@': './index',
+        'mis@comp': './index/js/components'
     },
     // 外部扩展
     externals: {
@@ -63,4 +64,4 @@ module.exports = {
             }
         }
     }
-}
+};
