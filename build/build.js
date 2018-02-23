@@ -9,20 +9,18 @@ const
 
 const config = require('../config');
 
-process.env.NODE_ENV = JSON.parse(config.build.env.NODE_ENV);
-
 const webpackConfig = require('./webpack.prod.config');
 
 let webpackCompile = require('./util').webpackCompile;
 
-let spinner = ora('buildding for production...\n');
+let spinner = ora('buildding for ${process.env.NODE_ENV}...\n');
 
 spinner.start();
 
 rm(config.build.buildRoot, err => {
     if (err) throw err;
 
-    spinner.text = 'webpack build...';
+    spinner.text = `webpack build...`;
 
     webpackCompile(webpackConfig, () => {
         spinner.stop();

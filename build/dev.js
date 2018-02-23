@@ -2,8 +2,7 @@
  * @description dev
  */
 
-let
-    path = require('path'),
+let path = require('path'),
     express = require('express'),
     webpack = require('webpack'),
     webpackDevMiddleware = require('webpack-dev-middleware'),
@@ -12,12 +11,9 @@ let
     chalk = require('chalk'),
     opn = require('opn');
 
-let
-    config = require('../config').dev,
+let config = require('../config').dev,
     pageUrl = config.pageUrl,
     app = express();
-
-process.env.NODE_ENV = JSON.parse(config.env.NODE_ENV);
 
 if (config.isMultiplePage) {
     Object.keys(pageUrl).forEach(function(item) {
@@ -29,8 +25,7 @@ if (config.isMultiplePage) {
 
 const webpackConfig = require('./webpack.dev.config');
 
-const
-    port = process.env.PORT || config.port || 4001,
+const port = process.env.PORT || config.port || 4001,
     url = `http://localhost:${port}`;
 
 function addHRM(entry) {

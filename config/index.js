@@ -45,18 +45,13 @@ let baseConfig = Object.assign({}, base, {
 
 module.exports = {
     build: Object.assign({
-        env: require('./prod.env'),
         sourceMap: '#source-map'
     }, baseConfig),
     'build:d': Object.assign({
-        env: require('./prod-d.env'),
         sourceMap: '#source-map'
     }, baseConfig),
     'build:c': Object.assign({
-        env: require('./prod-c.env'),
         sourceMap: '#source-map'
     }, baseConfig),
-    dev: Object.assign({
-        env: require('./dev.env')
-    }, baseConfig)
+    dev: Object.assign({}, baseConfig)
 }

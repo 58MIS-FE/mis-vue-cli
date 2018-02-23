@@ -93,8 +93,6 @@ npm run build:vendors
 .
 ├── README.md
 ├── build
-|   ├── build-c.js
-│   ├── build-d.js
 │   ├── build.js
 │   ├── dev-client.js
 │   ├── dev.js
@@ -107,9 +105,6 @@ npm run build:vendors
 │   ├── base.js
 │   ├── dev.env.js
 │   ├── index.js
-│   ├── prod-c.env.js
-│   ├── prod-d.env.js
-│   ├── prod.env.js
 │   └── util.js
 ├── mock
 │   ├── home  (页面1，对应的mock数据)
@@ -142,7 +137,7 @@ npm run build:vendors
         └── test.txt
 ```
 
-> *注意*: 开启多页功能的情况下，脚本默认获取 `src/pages`文件夹下除 `common` 文件夹外的所有满足 `!(_)*/!(_)*.html` 条件的html文件作为html页面，并将满足条件的文件夹下的 `js` 文件夹下的 `index.js` 作为 webpack 打包入口。
+> *注意*: 开启多页功能的情况下，脚本默认获取 `src`文件夹下除 `common` 文件夹外的所有满足 `!(_)*/!(_)*.html` 条件的html文件作为html页面，并将满足条件的文件夹下的 `js` 文件夹下的 `index.js` 作为 webpack 打包入口。
 
 ### 每个页面项目的基本格式
 
@@ -265,15 +260,13 @@ npm run build:vendors
 ## 3. 技术栈
 
 - [x] [Webpack](https://webpack.github.io)
-- [x] [React](https://facebook.github.io/react/)
+- [x] [Vue](https://github.com/vuejs/vue)
 - [x] [ES6](http://es6.ruanyifeng.com/)
-- [x] [Redux](https://github.com/rackt/redux)
-- [x] [React-router](https://github.com/rackt/react-router-redux)
-- [x] [react-router-redux](https://github.com/reactjs/react-router-redux)
+- [x] [Vue-router](https://github.com/vuejs/vue-router)
 - [x] [Babel](https://babeljs.io/)
 - [x] [CSS modules](https://github.com/outpunk/postcss-modules)
 - [x] [Less](https://github.com/less/less.js)
 - [x] [Sass](https://github.com/sass/node-sass)
-- [x] [Eslint](https://github.com/eslint/eslint)
+- [ ] [Eslint](https://github.com/eslint/eslint)
 - [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [ ] [PostCSS](https://github.com/postcss/postcss)
