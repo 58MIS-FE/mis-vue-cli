@@ -33,7 +33,7 @@ module.exports = webpackMerge(baseWebpackConfig, {
         }),
 
         // banner条
-        new webpack.BannerPlugin('版权归友友传媒所有'),
+        new webpack.BannerPlugin('版权归MIS-FE所有'),
 
         // 压缩css
         new OptimizeCSSPlugin(),

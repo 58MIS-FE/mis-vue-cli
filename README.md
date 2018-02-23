@@ -2,7 +2,7 @@
 
 ## 简介
 
-该项目为日常项目开发中抽离的一个脚手架，目的是为了方便后续开发。脚手架默认配置es6-7-8＋cssnext+vue开发环境，但并不仅限于用vue做开发。并对webpack打包流程做了优化处理。支持单页／多页面开发，支持代码切割异步加载，有兴趣者请参
+该项目为日常项目开发中抽离的一个脚手架，目的是为了方便后续开发。脚手架默认配置es6-7-8＋cssnext+vue开发环境，但并不仅限于用vue做开发。并对webpack打包流程做了优化处理。支持单页／多页面开发，支持代码切割异步加载
 
 
 ## 打包
@@ -13,18 +13,53 @@
 
 脚手架使用 [DllPlugin + DllReferencePlugin](https://doc.webpack-china.org/plugins/dll-plugin/) 打包外部资源包，优化打包速度，`manifest` 及打包后的文件包均放置在 `static/libs/js` 目录下，也可进入脚本自行配置路径。
 
+
+## mis-vue-cli 功能特性
+
+- 可以解析 es6-7-8 语法新特性
+- 支持 cssnext
+- 编译完成自动打开浏览器
+- 区分开发环境和生产环境
+- 实现组件级热更新
+- 实现代码的热替换，浏览器实时刷新查看效果
+- 分离业务功能代码和公共依赖代码
+- 单独分离 CSS 样式文件
+- 支持编译 HTML 模板
+- 支持文件 MD5 戳，解决文件缓存问题
+- 支持图片、图标字体等资源的编译
+- 支持一行命令产出待部署资源
+- 支持CDN资源定位打包
+- [ ] 可以进行代码规则校验
+- [ ] 支持 mocha 测试用例运行
+- [ ] 支持 LESS 预处理器
+- [ ] 支持浏览器源码调试
+- [ ] 支持 SASS 预处理器
+
+
+
 ### dev
 
 ``` shell
 npm run dev
 ```
 
-### start && mock
+### start
 
 ``` shell
-npm run start
+npm start
 ```
 
+### mock
+
+``` shell
+npm run mock
+```
+
+### dist
+
+``` shell
+npm run dist
+```
 
 ### build
 
@@ -225,3 +260,20 @@ npm run build:vendors
 * `libraryEntry` <Array> 要引进外部资源库的页面(为空则全部引入，填写页面名称，即入口文件夹名称)
 * `port` <Number> 本地开发端口（默认为 `8009`）
 * `proxy` <Object> 本地代理（参照[http-proxy-middleware文档](https://github.com/chimurai/http-proxy-middleware)）
+
+
+## 3. 技术栈
+
+- [x] [Webpack](https://webpack.github.io)
+- [x] [React](https://facebook.github.io/react/)
+- [x] [ES6](http://es6.ruanyifeng.com/)
+- [x] [Redux](https://github.com/rackt/redux)
+- [x] [React-router](https://github.com/rackt/react-router-redux)
+- [x] [react-router-redux](https://github.com/reactjs/react-router-redux)
+- [x] [Babel](https://babeljs.io/)
+- [x] [CSS modules](https://github.com/outpunk/postcss-modules)
+- [x] [Less](https://github.com/less/less.js)
+- [x] [Sass](https://github.com/sass/node-sass)
+- [x] [Eslint](https://github.com/eslint/eslint)
+- [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [ ] [PostCSS](https://github.com/postcss/postcss)

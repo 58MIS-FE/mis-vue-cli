@@ -4,12 +4,13 @@
     "description": "vue2 webpack3 postcss cli",
     "scripts": {
         "dev": "node build/dev.js",
-        "start": "npm run mock && npm run dev",
+        "start": "npm run dev",
         "build": "node build/build.js",
         "build:d": "node build/build-d.js",
         "build:c": "node build/build-c.js",
         "build:vendors": "webpack --config build/webpack.dll.config.js",
-        "mock": "node mock/server.js &"
+        "dist": "http-server ./dist -p 8888 -o",
+        "mock": "node mock/server.js"
     },
     "keywords": [
         "vue",
@@ -21,7 +22,7 @@
         "异步加载",
         "优化"
     ],
-    "author": "zhangzhen",
+    "author": "MIS-FE",
     "license": "MIT",
     "devDependencies": {
         "add-asset-html-webpack-plugin": "^2.0.1",
@@ -45,6 +46,7 @@
         "html-loader": "^0.4.5",
         "html-webpack-plugin": "^2.29.0",
         "http-proxy-middleware": "^0.17.4",
+        "http-server": "^0.11.1",
         "opn": "^5.1.0",
         "optimize-css-assets-webpack-plugin": "^2.0.0",
         "ora": "^1.3.0",
