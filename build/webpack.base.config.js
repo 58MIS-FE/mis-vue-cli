@@ -17,11 +17,11 @@ function getPath(...args) {
 
 function getCommonsChunk() {
     return new Glob('!(_)*/!(_)*.js', {
-            cwd: getPath('pages', 'common'),
+            cwd: getPath('common'),
             sync: true
         })
         .found
-        .map(file => getPath('pages', 'common', file));
+        .map(file => getPath('common', file));
 }
 
 const commonsChunk = config.isOpenSyncImport ? {} : Object.assign({

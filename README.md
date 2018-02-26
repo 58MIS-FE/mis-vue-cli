@@ -121,14 +121,18 @@ npm run build:vendors
 │   │       └── common.js
 │   ├── index (页面1，单页模式将默认将index文件夹作为页面)
 │   │   ├── index.html
-│   │   ├── js
+│   │   ├── components
+│   │   │   ├── app.vue
+│   │   ├── router
 │   │   │   ├── index.js
 │   │   └── style
 │   └── page2 (页面2)
-│       ├── index.html
-│       ├── js
-│       │   └── index.js
-│       └── style
+│   │   ├── index.html
+│   │   ├── components
+│   │   │   ├── app.vue
+│   │   ├── router
+│   │   │   ├── index.js
+│   │   └── style
 └── static (静态资源文件夹)
         ├── libs
         │   └── js (js文件夹下的)
@@ -143,9 +147,11 @@ npm run build:vendors
 
 ```
 .my-page (页面名称)
-├── index.html (页面渲染的html模版)
-├── js
-│   └── index.js (页面脚本入口)
+├── index.html(页面渲染的html模版)
+├── components
+│   ├── app.vue
+├── router
+└── index.js (页面脚本入口)
 └── style (页面的样式文件)
 ```
 

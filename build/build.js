@@ -13,7 +13,7 @@ const webpackConfig = require('./webpack.prod.config');
 
 let webpackCompile = require('./util').webpackCompile;
 
-let spinner = ora('buildding for ${process.env.NODE_ENV}...\n');
+let spinner = ora(`buildding for ${process.env.NODE_ENV}...\n`);
 
 spinner.start();
 

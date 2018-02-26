@@ -2,7 +2,7 @@
  * @description home模块路由配置
  */
 
-import Home from '../../components/pages/home';
+import Home from '../../views/home/';
 
 export default {
     path: '/home',
@@ -16,7 +16,7 @@ export default {
         component: () =>
             import (
                 /* webpackChunkName: "home-index-component" */
-                '../../components/pages/home/index.vue'
+                '../../views/home/index.vue'
             )
     }]
 }

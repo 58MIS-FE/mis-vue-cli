@@ -1,10 +1,10 @@
 <style>
-    @import '../../style/theme.css';
+    @import '../assets/theme.css';
 </style>
 
 <template>
     <div class="container">
-        <p>ccc</p>
+        <p>fdd</p>
         <router-view></router-view>
     </div>
 </template>

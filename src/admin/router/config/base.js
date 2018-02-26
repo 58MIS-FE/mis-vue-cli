@@ -6,7 +6,7 @@
 const ErrorComp = () =>
     import (
         /* webpackChunkName: "error-comp" */
-        '../../components/pages/error'
+        '../../views/error/index.vue'
     );
 
 export default [{
