@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import router from './router';
-import app from './components/app';
+import App from './App';
 
 new Vue({
+    el: '#app',
     router,
-    ...app
-}).$mount('#app');
+    template: '<App/>',
+    components: { App }
+});

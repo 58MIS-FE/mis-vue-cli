@@ -14,7 +14,7 @@
 <template>
     <div class="home-index">
         <h1 class="index__title">home-index-page</h1>
-        <p class="index__desc">i a test desc hh</p>
+        <p class="index__desc">i a test desc</p>
     </div>
 </template>
 

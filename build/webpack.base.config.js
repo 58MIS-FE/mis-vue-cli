@@ -69,7 +69,9 @@ module.exports = {
 
     resolve: {
         extensions: ['.js', '.vue', '.json', '.css'],
-        alias: config.commonAlias
+        alias: Object.assign(config.commonAlias, {
+            'vue': 'vue/dist/vue.js'
+        })
     },
 
     externals: config.externals,
