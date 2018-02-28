@@ -27,7 +27,7 @@ function getEntrySetting() {
         .forEach(file => {
             let pageName = file.split('/')[0];
 
-            result.entry[pageName] = getPath(pageName, 'js', 'index.js');
+            result.entry[pageName] = getPath(pageName, 'index.js');
             result.template.push(getPath(file));
         });
 

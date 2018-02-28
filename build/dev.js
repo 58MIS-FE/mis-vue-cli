@@ -18,7 +18,7 @@ let config = require('../config').dev,
 if (config.isMultiplePage) {
     Object.keys(pageUrl).forEach(function(item) {
         app.get(item, (req, res) => {
-            res.sendFile(pageUrl[item])
+            res.sendFile(pageUrl[item]);
         })
     });
 }

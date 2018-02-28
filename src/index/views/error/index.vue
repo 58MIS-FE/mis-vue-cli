@@ -15,7 +15,7 @@
         components: {
             syncTest: () => import(
                 /* webpackChunkName: "error-test-comp" */
-                'mis@comp/pages/error/test'
+                './test'
             )
         }
     }

@@ -1,14 +1,14 @@
 <style>
-    @import '../../style/theme.css';
+    @import './assets/theme.css';
 </style>
 
 <template>
-    <div class="container">
-        <p>ccc</p>
+    <div id="app" ref="myApp">
+        <p>abc</p>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
-    export default {}
+    export default {};
 </script>
