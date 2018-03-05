@@ -27,9 +27,9 @@ module.exports = webpackMerge(baseWebpackConfig, {
     devtool: config.sourceMap || false,
 
     plugins: [
-        // 环境变量
+        // 环境变量 update
         new webpack.DefinePlugin({
-            'process.env': config.env || { 'NODE_ENV': '"development"' }
+            'process.env': config.env || { 'NODE_ENV': '"production"' }
         }),
 
         // banner条
