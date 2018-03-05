@@ -29,7 +29,7 @@ module.exports = webpackMerge(baseWebpackConfig, {
     plugins: [
         // 环境变量
         new webpack.DefinePlugin({
-            'process.env': config.env
+            'process.env': config.env || { 'NODE_ENV': '"development"' }
         }),
 
         // banner条
