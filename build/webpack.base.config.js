@@ -102,7 +102,6 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -113,7 +112,6 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                exclude: /node_modules/,
                 use: {
                     loader: 'url-loader',
                     options: {
@@ -124,7 +122,6 @@ module.exports = {
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)$/i,
-                exclude: /node_modules/,
                 use: {
                     loader: 'url-loader',
                     options: {
