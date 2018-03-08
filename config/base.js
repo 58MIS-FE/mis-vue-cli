@@ -6,7 +6,11 @@ const path = require('path');
 
 module.exports = {
     // 多页配置
-    isMultiplePage: false,
+    isMultiplePage: true,
+    //多页面打包入口
+    multiplePage:[
+
+    ],
     //想要打包的页面
     entryPage: 'admin',
     // 是否启用异步加载功能
@@ -52,6 +56,8 @@ module.exports = {
     libraryEntry: [],
     // 本地开发端口
     port: 5858,
+    //是否参看源码  参看'#source-map' 不参看：false
+    sourceMap: false,
     // 本地开发代理,默认转发本地的1111
     proxy: {
         '/api': {

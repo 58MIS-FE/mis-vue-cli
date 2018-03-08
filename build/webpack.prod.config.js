@@ -49,14 +49,14 @@ module.exports = webpackMerge(baseWebpackConfig, {
             sourceMap: true
         }),
 
-        // 压缩静态资源
-        new CompressionWebpackPlugin({
-            asset: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: /\.js$|\.html$/,
-            threshold: 10240,
-            minRatio: 0.8
-        }),
+        // // 压缩静态资源
+        // new CompressionWebpackPlugin({
+        //     asset: '[path].gz[query]',
+        //     algorithm: 'gzip',
+        //     test: /\.js$|\.html$/,
+        //     threshold: 10240,
+        //     minRatio: 0.8
+        // }),
 
         // 拷贝静态资源
         new CopyWebpackPlugin([{

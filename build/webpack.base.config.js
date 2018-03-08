@@ -56,7 +56,7 @@ function getCdnUrl() {
 function pathCDNJoin(...args) {
     return process.env.NODE_ENV == 'production-c' ? args.join('/') : path.posix.join(...args);
 }
-console.log(config.entry,'222')
+
 module.exports = {
     entry: Object.assign({}, config.entry, commonsChunk),
 

@@ -13,6 +13,13 @@ function getPath(...args) {
     return path.join(base.assetsRoot, ...args);
 }
 
+//判断是否在数组中
+function IsInArray(arr,val){
+  if(arr.length == 0) return true
+   let testStr = arr.join(",")
+　　return testStr.indexOf(val)!= -1;
+}
+//多页面配置
 function getEntrySetting() {
     let result = {
         entry: {},
@@ -26,11 +33,11 @@ function getEntrySetting() {
         .found
         .forEach(file => {
             let pageName = file.split('/')[0];
-
-            result.entry[pageName] = getPath(pageName, 'index.js');
-            result.template.push(getPath(file));
+            if (IsInArray(base.multiplePage,pageName)) {
+              result.entry[pageName] = getPath(pageName, 'index.js');
+              result.template.push(getPath(file));
+            }
         });
-
     return result;
 }
 
@@ -42,16 +49,18 @@ let baseConfig = Object.assign({}, base, {
     outputPath: base.buildRoot,
     commonAlias: mapObject(base.commonAlias, value => getPath(value))
 });
+//查看源码
+
 
 module.exports = {
     build: Object.assign({
-        sourceMap: '#source-map'
+        sourceMap: base.sourceMap
     }, baseConfig),
     'build:d': Object.assign({
-        sourceMap: '#source-map'
+        sourceMap: base.sourceMap
     }, baseConfig),
     'build:c': Object.assign({
-        sourceMap: '#source-map'
+        sourceMap: base.sourceMap
     }, baseConfig),
     dev: Object.assign({}, baseConfig)
 }
