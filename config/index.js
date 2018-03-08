@@ -37,8 +37,8 @@ function getEntrySetting() {
 let setting = getEntrySetting();
 
 let baseConfig = Object.assign({}, base, {
-    entry: base.isMultiplePage ? setting.entry : { index: getPath('index/js/index.js') },
-    template: base.isMultiplePage ? setting.template : [getPath('index/index.html')],
+    entry: base.isMultiplePage ? setting.entry : { index: getPath(`${base.entryPage}/index.js`) },
+    template: base.isMultiplePage ? setting.template : [getPath(`${base.entryPage}/index.html`)],
     outputPath: base.buildRoot,
     commonAlias: mapObject(base.commonAlias, value => getPath(value))
 });
