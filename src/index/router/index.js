@@ -6,8 +6,6 @@ Vue.use(VueRouter);
 
 /* webpackChunkName: "home-index-component" */
 
-const home = () =>
-    import ('../views/home/index.vue');
 
 const routes = [{
         path: '*',
@@ -15,7 +13,7 @@ const routes = [{
     },
     {
         path: '/home',
-        component: home
+        component: resolve => require(['../views/home/index.vue'],resolve)
     }
 ];
 
