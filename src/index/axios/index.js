@@ -1,10 +1,8 @@
 import axios from 'axios'
-import Qs from 'qs' 
-
-
-// const url = 'http://10.252.55.245:8112'
-
-const url = ''
+import Qs from 'qs'
+let url = ''
+process.env.NODE_ENV == 'development' ? url = 'http://10.252.55.245:8112' : ''
+     
 export const baseUrl = `${url}`
 //请求前
 axios.interceptors.request.use(
@@ -24,3 +22,4 @@ axios.interceptors.response.use(function (response) {
 }, function (error) {
     console.log(error,'error')
 });
+
