@@ -57,6 +57,26 @@ function pathCDNJoin(...args) {
     return process.env.NODE_ENV == 'production-c' ? args.join('/') : path.posix.join(...args);
 }
 
+
+/**
+ * 将需要的全局资源(项目static目录下的文件)插入到指定的html文件中
+ * @param {要插入的全局资源的名称, Array[string]} assetsPath 
+ * @param {要插入的页面, Array[string]} injectHtml 
+ */
+function generateCommonAssetArg (assetsPath, injectHtml) {
+    return assetsPath.map(pathItem => {
+        return {
+            filepath: pathJoin(config.assetsStatic, pathItem),
+            publicPath: pathJoin(config.publicPath, config.staticAssets, path.dirname(pathItem)),
+            outputPath: pathJoin(config.staticAssets, path.dirname(pathItem)),
+            files: injectHtml.map(entry => `${entry}.html`),
+            typeOfAsset: path.extname(pathItem).slice(1),
+            includeSourcemap: false
+        }
+    });
+}
+
+
 module.exports = {
     entry: Object.assign({}, config.entry, commonsChunk),
 
@@ -147,11 +167,14 @@ module.exports = {
 
         // 插入自定义文件插入到html中
         new AddAssetHtmlPlugin([{
-            filepath: pathJoin(config.assetsStatic, 'libs/js/vendors.js'),
-            publicPath: pathCDNJoin(getCdnUrl(), config.staticAssets, 'libs/js'),
-            outputPath: pathJoin(config.staticAssets, 'libs/js'),
-            files: config.libraryEntry.map(entry => entry + '.html'),
-            includeSourcemap: false
-        }])
+                filepath: pathJoin(config.assetsStatic, 'libs/js/vendors.js'),
+                publicPath: pathCDNJoin(getCdnUrl(), config.staticAssets, 'libs/js'),
+                outputPath: pathJoin(config.staticAssets, 'libs/js'),
+                files: config.libraryEntry.map(entry => entry + '.html'),
+                includeSourcemap: false
+            },
+            ...generateCommonAssetArg(config.injectStatic, config.injectHtml)
+        ])
+        
     ].concat(getCommonsChunkPluginSetting())
 }
