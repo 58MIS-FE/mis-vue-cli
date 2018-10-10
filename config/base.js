@@ -34,13 +34,13 @@ module.exports = {
 
     // html页面中需要插入的全局js、css静态资源(放在项目目录的static目录中)
     injectStatic: [
-        'codemirror/theme/monokai.css',
-		'codemirror/lib/codemirror.js',  
+        // 'codemirror/theme/monokai.css',
+		// 'codemirror/lib/codemirror.js',  
     ],
 
     //配合 injectStatic选项。需要指定 哪些html文件需要引入static中的全局资源(填写入口目录即可),为空则则所有页面都注入
     injectHtml: [
-        'index',
+        // 'index',
         // 'admin'
     ],
 
