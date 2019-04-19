@@ -1,5 +1,5 @@
 {
-  "name": "mis-vue-cli",
+  "name": "bic-vue-cli",
   "version": "1.0.1",
   "description": "vue2 webpack3 postcss cli",
   "scripts": {
@@ -10,7 +10,8 @@
     "build:c": "cross-env NODE_ENV=production-c node build/build.js",
     "build:vendors": "webpack --config build/webpack.dll.config.js",
     "dist": "http-server ./dist -p 8888 -o",
-    "mock": "node mock/server.js"
+    "mock": "node mock/server.js",
+    "arthur": "npm run build:c"
   },
   "keywords": [
     "vue",
@@ -22,7 +23,7 @@
     "异步加载",
     "优化"
   ],
-  "author": "MIS-FE",
+  "author": "BIC-FE",
   "license": "MIT",
   "devDependencies": {
     "add-asset-html-webpack-plugin": "^2.0.1",
@@ -72,6 +73,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "element-ui": "^2.7.2",
     "vue": "^2.4.1",
     "vue-router": "^2.7.0"
   }

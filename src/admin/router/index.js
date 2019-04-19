@@ -1,7 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Log from '../../common/log';
-
 Vue.use(VueRouter);
 
 /* webpackChunkName: "home-index-component" */
@@ -32,7 +30,7 @@ router.beforeEach((route, from, next) => {
 
 router.afterEach((to, from) => {
     //pv 统计
-    Log.init(to.path)
+    // Log.init(to.path)
 
 });
 export default router;

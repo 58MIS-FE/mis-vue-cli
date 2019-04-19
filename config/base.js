@@ -9,14 +9,14 @@ module.exports = {
     isMultiplePage: true,
     //多页面打包入口
     multiplePage:[
-        'index', 'admin'
+        'index',
     ],
     //想要打包的页面
     entryPage: 'admin',
     // 是否启用异步加载功能
     isOpenSyncImport: true,
     //开启CDN资源引用
-    cdnUrl: 'http://www.mis.58.com',
+    cdnUrl: 'http://j1.58cdn.com.cn',
     // 最小chunk的大小
     minChunkSize: 10000,
     // dev模式下是否自动打开页面

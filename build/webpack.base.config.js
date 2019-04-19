@@ -82,8 +82,8 @@ module.exports = {
 
     output: {
         path: config.buildRoot,
-        filename: pathJoin('js', '[name].[hash].js'),
-        chunkFilename: pathJoin('js', '[name].[hash].js'),
+        filename: pathJoin('js', '[name].js'),
+        chunkFilename: pathJoin('js', '[name].js'),
         publicPath: getCdnUrl()
     },
 
@@ -136,7 +136,7 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 10000,
-                        name: pathJoin(config.staticAssets, 'images/[name].[hash:8].[ext]')
+                        name: pathJoin(config.staticAssets, 'images/[name].[ext]')
                     }
                 }
             },
@@ -146,7 +146,7 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 10000,
-                        name: pathJoin(config.staticAssets, 'fonts/[name].[hash:8].[ext]')
+                        name: pathJoin(config.staticAssets, 'fonts/[name].[ext]')
                     }
                 }
             }
@@ -156,7 +156,7 @@ module.exports = {
     plugins: [
         // 提取css
         new ExtractTextPlugin({
-            filename: pathJoin('css', '[name].[hash:8].css')
+            filename: pathJoin('css', '[name].css')
         }),
 
         // 检测外部依赖包是否更新
