@@ -131,6 +131,14 @@ module.exports = {
                 })
             },
             {
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'sass']
+            },
+            {
+                test: /\.less$/,
+                loaders: ["less-loader"]
+            },
+            {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 use: {
                     loader: 'url-loader',
@@ -145,7 +153,7 @@ module.exports = {
                 use: {
                     loader: 'url-loader',
                     options: {
-                        limit: 10000,
+                        limit: 100000,
                         name: pathJoin(config.staticAssets, 'fonts/[name].[ext]')
                     }
                 }
