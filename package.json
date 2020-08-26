@@ -1,5 +1,5 @@
 {
-  "name": "bic-vue-cli",
+  "name": "tp-vue-cli",
   "version": "1.0.1",
   "description": "vue2 webpack3 postcss cli",
   "scripts": {
@@ -23,7 +23,7 @@
     "异步加载",
     "优化"
   ],
-  "author": "BIC-FE",
+  "author": "TP-FE",
   "license": "MIT",
   "devDependencies": {
     "add-asset-html-webpack-plugin": "^2.0.1",
