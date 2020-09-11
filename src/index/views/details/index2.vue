@@ -29,7 +29,7 @@
                         <td><span>安全手机号：</span> <label>xxxx</label> </td>
                     </tr>
                     <tr>
-                        <td><span>企业实名认证：</span> <span class="spanblue">{{true?"已通过":"未通过"}}</span></td>
+                        <td><span>企业实名认证：</span> <span class="spanblue">"已通过"</span></td>
                         <td></td>
                     </tr>
 
