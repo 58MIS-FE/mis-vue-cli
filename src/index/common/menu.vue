@@ -14,13 +14,12 @@
         <el-submenu :index="index+'a'" :key='index'>
           <template slot="title">
             <i :class="item.icon"></i>
-            <!-- <span>{{ item.name }}</span> -->
-            <i>{{item.name}}</i>
+            <span>{item.name}</span>
           </template>
           <el-menu-item-group>
             <template v-for="(item_,index_) in item.childMenuList">
               <el-menu-item  :key="index_" :index="item_.url">
-                <span>{{ item_.name }}</span>
+                <span>{{item_.name}}</span>
               </el-menu-item>
             </template>
           </el-menu-item-group>
