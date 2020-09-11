@@ -6,7 +6,8 @@ import Qs from 'qs'
  * development 为开发环境
  * 上线的时候会自动选改成空
  */
-let url = process.env.NODE_ENV == 'development' ? 'http://test.58.com:8112' : ''
+// let url = process.env.NODE_ENV == 'development' ? 'http://test.58.com:8112' : ''
+let url = process.env.NODE_ENV == 'development' ? '/api' : ''
      
 
 /**

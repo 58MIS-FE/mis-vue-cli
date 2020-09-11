@@ -41,3 +41,249 @@ a{
 .fr{
   float:right;
 }
+
+
+/* ================ */
+
+.margin_t6{
+  margin-top: 6px;
+}
+.margin_b16{
+  margin-bottom: 16px;
+}
+.margin_l24{
+  margin-left: 24px;
+}
+.padding16_0{
+  padding: 16px 0;
+}
+
+.border_t1{
+  border-top: 1px solid rgba(216,220,230,1);
+}
+
+.w400{
+  width: 400px !important;
+}
+/* ================ */
+
+.container{
+  background-color: #fff;
+  border-radius:4px;
+  margin: 22px;
+}
+.c_tit{
+  height: 56px;
+  line-height: 56px;
+  border-bottom: 1px solid rgba(240,242,245,1);
+  font-size:16px;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(53,64,82,1);
+  padding-left: 24px;
+}
+.query_div {
+  width: 250px;
+  margin-right: 24px;
+  display: inline-block;
+  margin-bottom: 15px;
+  vertical-align: bottom;
+}
+
+.query_container {
+  padding: 24px 24px 0 24px;
+}
+label.q_d_lab {
+  height: 22px;
+  font-size:14px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(127,143,164,1);
+  line-height:22px;
+}
+
+button.btn {
+  min-width: 80px;
+}
+button.btn.btn1 {
+  border-radius: 2px !important;
+}
+
+.table_container {
+  margin: 16px 24px;
+}
+
+.pagination_div {
+  padding: 24px;
+  text-align: right;
+}
+
+.el-select.w100 {
+  width: 100%;
+}
+.w100.el-cascader {
+  width: 100%;
+}
+.el-date-editor.w100 {
+  width: 100%;
+}
+
+
+  
+.form_container {
+    width: 500px;
+    margin: 25px auto;
+    padding-bottom: 10px;
+}
+.form_container .el-select{
+    width: 100%;
+}
+.form_container .el-date-editor.el-input {
+    width: 100%;
+}
+.form_container .el-date-editor--datetimerange.el-input, .el-date-editor--datetimerange.el-input__inner{
+    width: 380px;
+}
+
+
+
+
+
+.details_container{
+  display: block;
+  box-sizing: border-box;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 6px 12px 0px rgba(0,0,0,0.04);
+  padding-bottom: 100px;
+}
+
+table.bortable td {
+  border: 1px solid rgba(240,242,245,1);
+  /* height: 56px; */
+  padding: 15px 0;
+}
+
+table.bortable {
+  border-collapse: collapse;
+  border: 1px solid rgba(240,242,245,1);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 25px;
+}
+
+.tablediv {
+  padding: 0 25px;
+}
+
+table.bortable span:first-child {
+  width: 120px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  display: inline-block;
+  margin-right: 15px;
+  /* line-height: 55px; */
+  font-size:14px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(127,143,164,1);
+  vertical-align: middle;
+}
+table.bortable label{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  width: calc(100% - 150px);
+  font-family: PingFangSC-Regular,PingFang SC;
+  font-weight: 400;
+  color: #354052;
+}
+td.backgcoltit {
+  background-color: #FAFAFD;
+  padding-left: 23px !important;
+}
+span.spanblue {
+  height: 22px;
+  font-size:14px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(0,170,0,1);
+  line-height:22px;
+}
+.tableimgdiv img {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.tableimgdiv {
+  width: calc(100% - 150px);
+  display: inline-block;
+  vertical-align: middle;
+}
+/* ======覆盖样式====== */
+
+.el-input__inner{
+  height: 36px;
+  line-height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+  border: 1px solid #CAD2DD;
+}
+.el-input-number .el-input__inner{
+  height: 40px;
+}
+.el-input__icon {
+  line-height: 36px;
+}
+.el-button {
+  border: 1px solid #CAD2DD;
+}
+.el-table__header-wrapper table thead tr th {
+  background-color: rgba(250,250,253,1);
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+  margin: 0 5px;
+  background-color: #fff;
+  border: 1px solid #CAD2DD;
+  color: #606266;
+  min-width: 30px;
+  border-radius: 2px;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #0364ff;
+}
+.el-pagination.is-background .el-pager li:not(.disabled):hover {
+  color: #0364ff;
+}
+.el-tabs__header.is-top {
+  line-height: 49px;
+}
+.el-tabs__header{
+  margin: 0;
+}
+.el-tabs__active-bar {
+  background-color: #0364ff;
+}
+.el-tabs__item.is-active {
+  color: #0364ff;
+}
+
+
+
+button.btn.el-button--primary {
+  background-color: #0364FF;
+  border-color: #0364ff;
+}
+button.btn.el-button--primary:focus, button.btn.el-button--primary:hover {
+  background: #0b60df;
+  border-color: #0b60df;
+  color: #e6e6f4;
+}
+
+.el-cascader {
+  line-height: 36px;
+}

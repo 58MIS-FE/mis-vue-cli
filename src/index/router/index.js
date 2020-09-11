@@ -1,41 +1,42 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Upload1 from '@/index/components/upload/upload1.vue'
-import Upload2 from '@/index/components/upload/upload2.vue'
-import Upload3 from '@/index/components/upload/upload3.vue'
-import Table1 from '@/index/components/table/table1.vue'
-import Table2 from '@/index/components/table/table2.vue'
-import Tabs1 from '@/index/components/tabs/tabs1.vue'
-import Tabs2 from '@/index/components/tabs/tabs2.vue'
-import Form1 from '@/index/components/form/form1.vue'
-import Form2 from '@/index/components/form/form2.vue'
-import Form3 from '@/index/components/form/form3.vue'
-import HomePage from '@/index/components/homepage/homePage.vue'
+
+import table1 from '@/index/views/table/index1.vue'
+import table2 from '@/index/views/table/index2.vue'
+import table3 from '@/index/views/table/index3.vue'
+import form1 from '@/index/views/form/index1.vue'
+import form2 from '@/index/views/form/index2.vue'
+import form3 from '@/index/views/form/index3.vue'
+import details1 from '@/index/views/details/index1.vue'
+import details2 from '@/index/views/details/index2.vue'
+import basicComponents from '@/index/views/basicComponents/index1.vue'
+
+
+import Home from '@/index/views/home/index.vue'
+// import Index from '@/index/views/index/index.vue'
 Vue.use(VueRouter);
 
-
-
-const routes = [{
+const routes = [
+    {
         path: '*',
-        redirect: '/homepage',
-        component: Upload1
+        redirect: '/index',
+        component: Home
     },
     {
-        path: '/home',
-        component: resolve => require(['../views/home/index.vue'],resolve),
+        path: '/',
+        component: Home,
         children: [
-            { path: '/homepage', component: HomePage },
-            { path: '/upload1', component: Upload1 },
-            { path: '/upload2', component: Upload2},
-            { path: '/upload3', component: Upload3},
-            { path: '/table1', component: Table1},
-            { path: '/table2', component: Table2},
-            { path: '/tabs1', component: Tabs1},
-            { path: '/tabs2', component: Tabs2},
-            { path: '/form1', component: Form1},
-            { path: '/form2', component: Form2},
-            { path: '/form3', component: Form3},
-          ]
+            { path: '/basicComponents', component: basicComponents },   
+            { path: '/table1', component: table1 },           
+            { path: '/table2', component: table2 },           
+            { path: '/table3', component: table3 },           
+            { path: '/form1', component: form1 },           
+            { path: '/form2', component: form2 },           
+            { path: '/form3', component: form3 },  
+            { path: '/details1', component: details1 },           
+            { path: '/details2', component: details2 },           
+         
+        ]
     }
 ];
 
@@ -46,14 +47,11 @@ const router = new VueRouter({
 //可做埋点统计
 router.beforeEach((route, from, next) => {
     let { meta } = route;
-
     meta.title && (window.document.title = meta.title);
     next();
 });
 
 router.afterEach((to, from) => {
     //pv 统计
-  
-
 });
 export default router;

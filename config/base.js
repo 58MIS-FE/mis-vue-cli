@@ -12,7 +12,7 @@ module.exports = {
         'index',
     ],
     //想要打包的页面
-    entryPage: 'admin',
+    entryPage: 'index',
     // 是否启用异步加载功能
     isOpenSyncImport: true,
     //开启CDN资源引用
