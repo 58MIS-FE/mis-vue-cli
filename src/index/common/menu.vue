@@ -10,7 +10,51 @@
         <i class="titlogo"></i><label>交易UI模板库</label>
         <!-- <label class="closeMenu" @click="()=>{navOpen=!navOpen}"><i class="el-icon-s-fold"></i></label> -->
       </div>
-      <template v-for="(item,index) in menudata">
+       <el-submenu index="1a" >
+        <template slot="title">
+        <i class="el-icon-edit-outline"></i>
+        <span>表单页</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item  index="/form1">
+            <span>单列表单1</span>
+          </el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+
+      <el-submenu index="2a" >
+        <template slot="title">
+        <i class="el-icon-notebook-2"></i>
+        <span>列表页</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item  index="/table1">
+            <span>基础数据列表1</span>
+          </el-menu-item>
+          <el-menu-item  index="/table2">
+            <span>基础数据列表2</span>
+          </el-menu-item>
+          <el-menu-item  index="/table3">
+            <span>基础数据列表3</span>
+          </el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+
+      <el-submenu index="3a" >
+        <template slot="title">
+        <i class="el-icon-tickets"></i>
+        <span>详情页</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item  index="/details1">
+            <span>基本详情1</span>
+          </el-menu-item>
+          <el-menu-item  index="/details2">
+            <span>基本详情2</span>
+          </el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+      <!-- <template v-for="(item,index) in menudata">
         <el-submenu :index="index+'a'" :key='index'>
           <template slot="title">
             <i :class="item.icon"></i>
@@ -20,12 +64,11 @@
             <template v-for="(item_,index_) in item.childMenuList">
               <el-menu-item  :key="index_" :index="item_.url">
                 <span>{{item_.name}}</span>
-                <span>{{</span>
               </el-menu-item>
             </template>
           </el-menu-item-group>
         </el-submenu>
-      </template>
+      </template> -->
     </el-menu>
     <div class="bottondiv">
       <label class="closeMenu" @click="()=>{navOpen=!navOpen}"><i class="el-icon-s-fold"></i></label>
