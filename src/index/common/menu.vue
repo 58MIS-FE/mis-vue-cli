@@ -7,7 +7,7 @@
       :collapse="navOpen"
       :collapse-transition="false">
       <div class="lefttit">
-        <i class="titlogo"></i><label>{{title}}</label>
+        <i class="titlogo"></i><label>交易UI模板库</label>
         <!-- <label class="closeMenu" @click="()=>{navOpen=!navOpen}"><i class="el-icon-s-fold"></i></label> -->
       </div>
       <template v-for="(item,index) in menudata">
@@ -20,6 +20,7 @@
             <template v-for="(item_,index_) in item.childMenuList">
               <el-menu-item  :key="index_" :index="item_.url">
                 <span>{{item_.name}}</span>
+                <span>{{</span>
               </el-menu-item>
             </template>
           </el-menu-item-group>
@@ -37,7 +38,7 @@ export default {
   data() {
     return {
       navOpen:false,
-      title:'交易UI模板库',
+
       menudata:[
         {
           name:"组件看板",
