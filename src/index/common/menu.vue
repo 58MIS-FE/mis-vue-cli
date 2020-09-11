@@ -14,7 +14,8 @@
         <el-submenu :index="index+'a'" :key='index'>
           <template slot="title">
             <i :class="item.icon"></i>
-            <span>{{ item.name }}</span>
+            <!-- <span>{{ item.name }}</span> -->
+            <i>{{item.name}}</i>
           </template>
           <el-menu-item-group>
             <template v-for="(item_,index_) in item.childMenuList">
