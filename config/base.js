@@ -48,8 +48,8 @@ module.exports = {
     commonAlias: {
         Static: 'static',
         '@': './',
-        'mis@': './index',
-        'mis@comp': './index/js/components'
+        'tp@': './index',
+        'tp@comp': './index/js/components'
     },
     // 外部扩展
     externals: {
