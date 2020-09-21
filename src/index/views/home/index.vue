@@ -3,7 +3,7 @@
     <el-container style="width:100%">
      
       <!-- 侧边栏部分 -->
-      <el-aside width="208px" >
+      <el-aside width>
           <Menu/>
       </el-aside>
 

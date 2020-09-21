@@ -55,14 +55,24 @@
             v-model="input6"
             :options="options1"></el-cascader>
         </div>
-        <div class="query_div w400">
+        <div class="query_div">
           <label class="q_d_lab">日期范围选择框</label>
           <el-date-picker
             v-model="input7"
-            type="datetimerange"
+            type="daterange"
             range-separator="至"
             start-placeholder="开始日期"
             end-placeholder="结束日期">
+          </el-date-picker>
+        </div>
+        <div class="query_div w400">
+          <label class="q_d_lab">日期时间范围选择框</label>
+          <el-date-picker
+            v-model="input8"
+            type="datetimerange"
+            range-separator="至"
+            start-placeholder="开始时间"
+            end-placeholder="结束时间">
           </el-date-picker>
         </div>
         <div class="query_div">
@@ -137,6 +147,7 @@ export default {
       input5:"",
       input6:"",
       input7:"",
+      input8:"",
       activeName: 'second',
       options1: [{
           value: 'zhinan',
@@ -362,36 +373,6 @@ export default {
           }, {
             id:"2344100",
             date: '2016-05-01',
-            name: '王小虎',
-            address: '模板样式文字文案'
-          }, {
-            id:"2344100",
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '模板样式文字文案'
-          }, {
-            id:"2344100",
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '模板样式文字文案'
-          }, {
-            id:"2344100",
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '模板样式文字文案'
-          }, {
-            id:"2344100",
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '模板样式文字文案'
-          }, {
-            id:"2344100",
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '模板样式文字文案'
-          }, {
-            id:"2344100",
-            date: '2016-05-03',
             name: '王小虎',
             address: '模板样式文字文案'
           }, {

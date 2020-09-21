@@ -225,7 +225,9 @@ span.spanblue {
   vertical-align: middle;
 }
 /* ======覆盖样式====== */
-
+.el-date-editor--daterange.el-input, .el-date-editor--daterange.el-input__inner, .el-date-editor--timerange.el-input, .el-date-editor--timerange.el-input__inner{
+  width: 250px;
+}
 .el-input__inner{
   height: 36px;
   line-height: 36px;
